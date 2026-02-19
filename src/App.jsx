@@ -17,26 +17,40 @@
 
 // export default App
 
-import React, { useState } from 'react'
+// import React, { useState } from 'react'
 
-const App = () => {
-const [name,setname]=useState("")
-const [age,setage]=useState("")
-const [submitted,setSubmitted]=useState(false)
-const handlesubmit=(e)=>{
-  e.preventDefault()
-  setSubmitted(true)
-}  
-return (<>
-  <form action="" onSubmit={handlesubmit}>
-    <label htmlFor="name">Name:</label>
-  <input type="text" onChange={(e) => setname(e.target.value)} value={name} /><br/>
-  <label htmlFor="age">Age:</label>
-  <input type="number" value={age} onChange={(e)=>setage(e.target.value)}/><br/>
-  <button >Submit</button></form>
+// const App = () => {
+// const [name,setname]=useState("")
+// const [age,setage]=useState("")
+// const [submitted,setSubmitted]=useState(false)
+// const handlesubmit=(e)=>{
+//   e.preventDefault()
+//   setSubmitted(true)
+// }  
+// return (<>
+//   <form action="" onSubmit={handlesubmit}>
+//     <label htmlFor="name">Name:</label>
+//   <input type="text" onChange={(e) => setname(e.target.value)} value={name} /><br/>
+//   <label htmlFor="age">Age:</label>
+//   <input type="number" value={age} onChange={(e)=>setage(e.target.value)}/><br/>
+//   <button >Submit</button></form>
   
-  {submitted && <h1>Hello {name}</h1>}
-  {submitted && <h2>Hello {age}</h2>}</>)
-}
+//   {submitted && <h1>Hello {name}</h1>}
+//   {submitted && <h2>Hello {age}</h2>}</>)
+// }
 
+// export default App
+import React from 'react'
+import { useState } from 'react'
+import { useEffect } from 'react'
+const App = () => {
+  const [count,setcount]=useState(0)
+    useEffect(()=>{
+      console.log("useeffect called")},[count]
+  )
+  return (<>
+    <h1>{count}</h1>
+    <button onClick={()=>setcount(count+1)}>add it</button>
+  </>)   
+}
 export default App
